@@ -175,7 +175,7 @@ class MemeViewController: UIViewController, UINavigationControllerDelegate, UIIm
     }
     func save() {
         let meme = Meme(topText: topTextBox.text!, bottomText: bottomTextBox.text!, originalImage:
-            memeViewer.image, memedImage: memedImage)
+            memeViewer.image!, memedImage: memedImage)
         
         let object = UIApplication.shared.delegate
         let appDelegate = object as! AppDelegate
