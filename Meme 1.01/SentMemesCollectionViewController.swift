@@ -7,13 +7,24 @@
 //
 
 import UIKit
+import Foundation
 
 private let reuseIdentifier = "Cell"
 
 class SentMemesCollectionViewController: UICollectionViewController {
+    
+    var memes: [Meme]!
 
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // MARK: Command gives 3 columns in View : ADDED
+        let width = collectionView!.frame.width / 3
+        let layout = collectionViewLayout as!
+        UICollectionViewFlowLayout
+        layout.itemSize = CGSize(width: width, height: width)
         
         //Shared Memes
         
@@ -25,6 +36,11 @@ class SentMemesCollectionViewController: UICollectionViewController {
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        memes = appDelegate.memes
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,17 +62,17 @@ class SentMemesCollectionViewController: UICollectionViewController {
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return 6
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell", for: indexPath)
     
         // Configure the cell
     

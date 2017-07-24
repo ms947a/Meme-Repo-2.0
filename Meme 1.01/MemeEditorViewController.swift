@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MemeViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate {
+class MemeEditorViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate {
     
     
     //Text Attributes that will determine the size and color of text
@@ -98,7 +98,11 @@ class MemeViewController: UIViewController, UINavigationControllerDelegate, UIIm
         subscribeToKeyboardNotification()
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)
         
+        //Hide Navigation Bar
+        self.navigationController?.isNavigationBarHidden = true
+        self.tabBarController?.tabBar.isHidden = true;
     }
+    
     func subscribeToKeyboardNotification() {
         NotificationCenter.default .addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
     }
@@ -180,8 +184,7 @@ class MemeViewController: UIViewController, UINavigationControllerDelegate, UIIm
         let object = UIApplication.shared.delegate
         let appDelegate = object as! AppDelegate
         appDelegate.memes.append(meme)
-        
-    }
+        }
    
 }
 // set constant value for text boxes
