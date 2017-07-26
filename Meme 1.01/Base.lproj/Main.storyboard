@@ -154,21 +154,26 @@
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableViewCell" id="OQS-zo-kv0" customClass="TableViewCell" customModule="Meme_1_01" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OQS-zo-kv0" id="WnS-xR-KVu">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OQS-zo-kv0" id="WnS-xR-KVu" customClass="tableviewcell">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ylf-yG-dSq">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="ylf-yG-dSq" firstAttribute="centerX" secondItem="WnS-xR-KVu" secondAttribute="centerX" id="4Bk-J6-ef7"/>
-                                        <constraint firstItem="ylf-yG-dSq" firstAttribute="top" secondItem="WnS-xR-KVu" secondAttribute="top" id="KY6-DY-0yQ"/>
-                                        <constraint firstItem="ylf-yG-dSq" firstAttribute="leading" secondItem="WnS-xR-KVu" secondAttribute="leading" id="Ndi-vh-f7Y"/>
+                                        <constraint firstItem="ylf-yG-dSq" firstAttribute="leading" secondItem="WnS-xR-KVu" secondAttribute="leading" id="apw-e0-f1C"/>
                                         <constraint firstItem="ylf-yG-dSq" firstAttribute="centerY" secondItem="WnS-xR-KVu" secondAttribute="centerY" id="dp4-cn-Zhi"/>
+                                        <constraint firstAttribute="trailing" secondItem="ylf-yG-dSq" secondAttribute="trailing" constant="331" id="fZd-sp-and"/>
+                                        <constraint firstAttribute="bottom" secondItem="ylf-yG-dSq" secondAttribute="bottom" id="ksy-EW-wLT"/>
+                                        <constraint firstItem="ylf-yG-dSq" firstAttribute="top" secondItem="WnS-xR-KVu" secondAttribute="top" id="mq9-iU-6Xo"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="tableImageView" destination="ylf-yG-dSq" id="axI-s2-S4l"/>
+                                    <outlet property="tableViewCell" destination="WnS-xR-KVu" id="m2h-gF-Q6U"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -284,7 +289,21 @@
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s22-ne-Nmy" customClass="collectionImageView">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                        </imageView>
+                                    </subviews>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="s22-ne-Nmy" firstAttribute="leading" secondItem="2Qk-05-M2h" secondAttribute="leading" id="3Lu-q3-tiI"/>
+                                    <constraint firstAttribute="bottom" secondItem="s22-ne-Nmy" secondAttribute="bottom" id="7Bg-iy-OLu"/>
+                                    <constraint firstAttribute="trailing" secondItem="s22-ne-Nmy" secondAttribute="trailing" id="Jbf-Io-foS"/>
+                                    <constraint firstItem="s22-ne-Nmy" firstAttribute="top" secondItem="2Qk-05-M2h" secondAttribute="top" id="Yu6-Zv-Tac"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="collectionImageView" destination="s22-ne-Nmy" id="Io5-rg-LGw"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -309,6 +328,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="YGV-yS-qdh"/>
+        <segue reference="NYj-3b-oQ1"/>
     </inferredMetricsTieBreakers>
 </document>

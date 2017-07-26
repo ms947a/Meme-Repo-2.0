@@ -29,8 +29,6 @@ class SentMemesCollectionViewController: UICollectionViewController {
         //Shared Memes
         
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
@@ -43,10 +41,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
         memes = appDelegate.memes
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+ 
 
     /*
     // MARK: - Navigation
@@ -72,13 +67,21 @@ class SentMemesCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
+        let meme = memes[indexPath.row]
+        cell.collectionImageView.image = meme.memedImage
     
         // Configure the cell
     
         return cell
     }
-
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let controller = self.storyboard!.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        controller.meme = self.memes[indexPath.item]
+        self.navigationController!.pushViewController(controller, animated: true)
+    }
+}
     // MARK: UICollectionViewDelegate
 
     /*
@@ -110,4 +113,4 @@ class SentMemesCollectionViewController: UICollectionViewController {
     }
     */
 
-}
+

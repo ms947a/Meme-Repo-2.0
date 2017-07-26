@@ -11,7 +11,8 @@ import Foundation
 
 class SentMemesTableViewController: UITableViewController {
     
-    var memes: [Meme] = []
+    var memes: [Meme]!
+    
    
 
     override func viewDidLoad() {
@@ -22,7 +23,8 @@ class SentMemesTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        memes = appDelegate.memes
         
         tableView.reloadData()
     }
@@ -30,8 +32,7 @@ class SentMemesTableViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        memes = appDelegate.memes
+        
         
     }
 
@@ -58,10 +59,11 @@ class SentMemesTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "tableViewCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
 
-        // Configure the cell...
-
+        let meme = memes[indexPath.row]
+        cell.tableImageView.image = meme.memedImage
+        
         return cell
     }
     

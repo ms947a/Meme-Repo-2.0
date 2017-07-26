@@ -10,8 +10,13 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    var meme: Meme!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        detailImageView.image = meme.memedImage
+        
 
         // Do any additional setup after loading the view.
     }
