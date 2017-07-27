@@ -138,7 +138,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="990" y="-1712"/>
+            <point key="canvasLocation" x="926" y="-1720"/>
         </scene>
         <!--Sent Memes-->
         <scene sceneID="r5B-in-Rkc">
@@ -169,11 +169,11 @@
             </objects>
             <point key="canvasLocation" x="940" y="-931"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Table-->
         <scene sceneID="uz8-uh-Vqq">
             <objects>
                 <navigationController id="rLA-qJ-UNo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" id="OFF-W9-FjW"/>
+                    <tabBarItem key="tabBarItem" title="Table" id="OFF-W9-FjW"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="v5Q-Kw-epJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -186,11 +186,11 @@
             </objects>
             <point key="canvasLocation" x="-15" y="-931"/>
         </scene>
-        <!--Item-->
+        <!--Collection-->
         <scene sceneID="LTQ-54-VNe">
             <objects>
                 <navigationController id="wfU-3y-KMF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="toe-tQ-mpZ"/>
+                    <tabBarItem key="tabBarItem" title="Collection" id="toe-tQ-mpZ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jUo-SZ-Pp2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -207,10 +207,10 @@
         <scene sceneID="aJe-NK-GIY">
             <objects>
                 <collectionViewController id="zgE-JW-JZn" customClass="SentMemesCollectionViewController" customModule="Meme_1_01" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="572-Fc-toN">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="572-Fc-toN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jNQ-J6-28F">
                             <size key="itemSize" width="50" height="50"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
