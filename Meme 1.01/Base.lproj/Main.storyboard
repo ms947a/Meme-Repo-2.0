@@ -229,6 +229,9 @@
                             <constraint firstItem="2ec-yp-NFi" firstAttribute="top" secondItem="v9P-Sf-OhP" secondAttribute="bottom" constant="139" id="vRo-2t-I8y"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="detailImageView" destination="2ec-yp-NFi" id="pO1-6K-bzv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MsQ-2z-Cs6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -275,34 +278,34 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="572-Fc-toN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.80835532185238512" green="1" blue="0.47785665434074154" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="jNQ-J6-28F">
-                            <size key="itemSize" width="200" height="200"/>
+                            <size key="itemSize" width="93" height="114"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionViewCell" id="2Qk-05-M2h" customClass="CollectionViewCell">
-                                <rect key="frame" x="87.5" y="0.0" width="200" height="200"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionViewCell" id="2Qk-05-M2h" customClass="CollectionViewCell" customModule="Meme_1_01">
+                                <rect key="frame" x="0.0" y="0.0" width="93" height="114"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="93" height="114"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s22-ne-Nmy" customClass="collectionImageView">
-                                            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s22-ne-Nmy">
+                                            <rect key="frame" x="0.0" y="0.0" width="102" height="94"/>
                                         </imageView>
                                     </subviews>
                                 </view>
                                 <constraints>
                                     <constraint firstItem="s22-ne-Nmy" firstAttribute="leading" secondItem="2Qk-05-M2h" secondAttribute="leading" id="3Lu-q3-tiI"/>
-                                    <constraint firstAttribute="bottom" secondItem="s22-ne-Nmy" secondAttribute="bottom" id="7Bg-iy-OLu"/>
-                                    <constraint firstAttribute="trailing" secondItem="s22-ne-Nmy" secondAttribute="trailing" id="Jbf-Io-foS"/>
+                                    <constraint firstAttribute="bottom" secondItem="s22-ne-Nmy" secondAttribute="bottom" constant="20" id="7Bg-iy-OLu"/>
+                                    <constraint firstAttribute="trailing" secondItem="s22-ne-Nmy" secondAttribute="trailing" constant="-9" id="Jbf-Io-foS"/>
                                     <constraint firstItem="s22-ne-Nmy" firstAttribute="top" secondItem="2Qk-05-M2h" secondAttribute="top" id="Yu6-Zv-Tac"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="collectionImageView" destination="s22-ne-Nmy" id="Io5-rg-LGw"/>
+                                    <outlet property="collectionImageView" destination="s22-ne-Nmy" id="e5i-rK-Y4N"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -324,7 +327,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uUG-Ih-iJp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="940" y="-233"/>
+            <point key="canvasLocation" x="940" y="-233.43328335832086"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

@@ -41,10 +41,9 @@ class MemeEditorViewController: UIViewController, UINavigationControllerDelegate
     // Share Button
     @IBAction func actionButton(_ sender: UIBarButtonItem) {
         let memedImage = generateMemedImage()
-        let activityViewController = UIActivityViewController(activityItems: [memedImage],
-                                                              applicationActivities: nil)
+        let activityViewController = UIActivityViewController(activityItems: [memedImage],applicationActivities: nil)
         activityViewController.completionWithItemsHandler = {
-            activity,completed, items, error in
+            (activity,completed, items, error) in
             if completed {
                 self.save()
                 self.dismiss(animated: true, completion: nil)
@@ -99,7 +98,7 @@ class MemeEditorViewController: UIViewController, UINavigationControllerDelegate
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)
         
         //Hide Navigation Bar
-        self.navigationController?.isNavigationBarHidden = true
+        
         self.tabBarController?.tabBar.isHidden = true;
     }
     
@@ -161,19 +160,22 @@ class MemeEditorViewController: UIViewController, UINavigationControllerDelegate
         return true
     }
     
+    func abracadabra(hide: Bool){
+        navigationBar.isHidden = hide
+        toolBar.isHidden = hide
+    }
+    
+    
     func generateMemedImage() -> UIImage{
         
-        navigationBar.isHidden = true
-        toolBar.isHidden = true
-        
+        abracadabra(hide:true)
         
         UIGraphicsBeginImageContext(self.view.frame.size)
         view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
         let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
-        navigationBar.isHidden = false
-        toolBar.isHidden = false
+        abracadabra(hide:false)
         
         return memedImage
     }
